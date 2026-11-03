@@ -4,7 +4,7 @@ import socket
 Ip = "127.0.0.1"
 Port = 21
 Username = "User"
-Password = "changeme"
+Password = "Password"
 
 def Edit(ip,port,user,passwd):
     Edit_Choice = input(":")
@@ -14,7 +14,8 @@ def Edit(ip,port,user,passwd):
         port = int(input("New Port: "))
     elif Edit_Choice.lower() == "username":
         user = input("New Username: ")
-
+    elif Edit_Choice.lower() == "password":
+        passwd = input("New Password: ")
     return ip,port,user,passwd
 
 while True:
@@ -35,7 +36,7 @@ while True:
             while ftp_connection:
                 try:
                     Commands = input("FTyrionP:")
-                    if Commands.upper() == "exit" or Commands.upper() == "quit":
+                    if Commands.upper() == "EXIT" or Commands.upper() == "QUIT":
                         ftp_connection.quit()
                         break
                     elif Commands.upper() == "LIST":
